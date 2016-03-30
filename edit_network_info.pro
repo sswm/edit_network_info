@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     weather.cpp
 
 HEADERS  += mainwindow.h \
-    weather.h
+    weather.h \
+    common.h
 
 FORMS    += mainwindow.ui \
     weather.ui

@@ -6,6 +6,8 @@
 #include <QDesktopWidget>//desktop使用
 #include <QLabel>
 
+
+
 MainWindow *radio = NULL;
 Weather *weather = NULL;
 QTabWidget *tabwidget;

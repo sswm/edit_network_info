@@ -12,11 +12,9 @@
 #include <QTableWidget>
 #include <QScrollArea>
 
-#define FILE_PATH   "url_play_list.txt"
-#define FACTORY_FILE_PATH   "factory.txt"
+#include "common.h"
 
 
-#define MAX_RADIO_ID        1024
 
 
 
@@ -37,6 +35,7 @@ public:
     QLineEdit *lineEdit_Url[MAX_RADIO_ID];
 
     int now_radio_num;
+    QString global_version;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -48,7 +47,7 @@ private slots:
 
     void on_pushButton_read_clicked();
 
-    void on_pushButton_save_clicked();
+
     void ShowSystemTime(void);
 
     void on_pushButton_clear_clicked();
@@ -56,7 +55,8 @@ private slots:
     void on_pushButton_add_item_clicked();
 
     void on_pushButton_clear_all_clicked();
-
+public slots:
+    void on_pushButton_save_clicked();
 private:
     Ui::MainWindow *ui;
 };
