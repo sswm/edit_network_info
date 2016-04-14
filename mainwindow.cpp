@@ -225,6 +225,9 @@ void MainWindow::SaveFile(const char *path)
         stream << global_version << "\n";
         stream << "#format follow \"xx.xx.xx\"\n\n";
         for (i = 1; i < MAX_RADIO_ID; i++) {
+            if (lineEdit_Num[i] == NULL) {
+                break;
+            }
             if (lineEdit_Num[i] != NULL) {
                 if ((lineEdit_Country[i]->text().compare("") == 0) &&
                     (lineEdit_Style[i]->text().compare("") == 0) &&
@@ -236,8 +239,8 @@ void MainWindow::SaveFile(const char *path)
                 }
                 content = lineEdit_Num[i]->text().trimmed();
                 sprintf(buf, "%s=%s\n", RADIO_NUM_STR, content.toLatin1().data());
-                stream << "\n";
-                stream << QString(buf);
+                //stream << "\n";
+                //stream << QString(buf);
             }
             if (lineEdit_Country[i] != NULL) {
                 content = lineEdit_Country[i]->text().trimmed();
@@ -261,11 +264,14 @@ void MainWindow::SaveFile(const char *path)
             }
 
         }
-
+        stream << "\n############Weather Info###############\n";
         for (i = 1; i < MAX_WEATHER_ID; i++) {
+            if (weather->lineEdit_Num[i] == NULL) {
+                break;
+            }
             if (weather->lineEdit_Num[i] != NULL) {
                 if ((weather->lineEdit_Country[i]->text().compare("") == 0) &&
-                    (weather->lineEdit_City[i]->text().compare("") == 0) &&
+                    (weather->lineEdit_City_English[i]->text().compare("") == 0) &&
                     (weather->lineEdit_Cid[i]->text().compare("") == 0))
 
                 {
@@ -273,19 +279,50 @@ void MainWindow::SaveFile(const char *path)
                 }
                 content = weather->lineEdit_Num[i]->text().trimmed();
                 sprintf(buf, "%s=%s\n", WEATHER_NUM_STR, content.toLatin1().data());
-                stream << "\n";
-                stream << QString(buf);
+                //stream << "\n";
+                //stream << QString(buf);
             }
             if (weather->lineEdit_Country[i] != NULL) {
                 content = weather->lineEdit_Country[i]->text().trimmed();
                 sprintf(buf, "%s=%s\n", W_COUNTRY_STR, content.toLatin1().data());
                 stream << QString(buf);
             }
-            if (weather->lineEdit_City[i] != NULL) {
-                content = weather->lineEdit_City[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR, content.toLatin1().data());
-                stream << QString(buf);
+            if (weather->lineEdit_City_English[i] != NULL) {
+                content = weather->lineEdit_City_English[i]->text().trimmed();
+                sprintf(buf, "%s=%s\n", W_CITY_STR, content.toLatin1().data());    
+            } else {
+                sprintf(buf, "%s=\n", W_CITY_STR);
             }
+            stream << QString(buf);
+
+            if (weather->lineEdit_City_Frechch[i] != NULL) {
+                content = weather->lineEdit_City_Frechch[i]->text().trimmed();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_FRENCH, content.toLatin1().data());
+            } else {
+                sprintf(buf, "%s=\n", W_CITY_STR_FRENCH);
+            }
+            stream << QString(buf);
+            if (weather->lineEdit_City_German[i] != NULL) {
+                content = weather->lineEdit_City_German[i]->text().trimmed();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_GERMAN, content.toLatin1().data());
+            } else {
+                sprintf(buf, "%s=\n", W_CITY_STR_GERMAN);
+            }
+            stream << QString(buf);
+            if (weather->lineEdit_City_Italian[i] != NULL) {
+                content = weather->lineEdit_City_Italian[i]->text().trimmed();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_ITALIAN, content.toLatin1().data());
+            } else {
+                sprintf(buf, "%s=\n", W_CITY_STR_ITALIAN);
+            }
+            stream << QString(buf);
+            if (weather->lineEdit_City_Spanish[i] != NULL) {
+                content = weather->lineEdit_City_Spanish[i]->text().trimmed();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_SPANISH, content.toLatin1().data());
+            } else {
+                sprintf(buf, "%s=\n", W_CITY_STR_SPANISH);
+            }
+            stream << QString(buf);
             if (weather->lineEdit_Cid[i] != NULL) {
                 content = weather->lineEdit_Cid[i]->text().trimmed();
                 sprintf(buf, "%s=%s\n", W_CITY_CID, content.toLatin1().data());

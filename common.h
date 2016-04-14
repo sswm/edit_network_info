@@ -22,9 +22,15 @@
 #define     URL_STR             "url"
 
 ///////////////////
-#define     WEATHER_NUM_STR       "weather_num"
-#define     W_COUNTRY_STR       "cnty"
-#define     W_CITY_STR          "city"
+#define     WEATHER_NUM_STR             "weather_num"
+#define     W_COUNTRY_STR               "cnty"
+#define     W_CITY_STR                  "city"
+#define     W_CITY_STR_FRENCH           "city_f"
+#define     W_CITY_STR_GERMAN           "city_g"
+#define     W_CITY_STR_ITALIAN          "city_i"
+#define     W_CITY_STR_SPANISH          "city_s"
+
+
 #define     W_CITY_CID          "id"
 
 
@@ -40,12 +46,20 @@
 #define     STYLE_START_X       220
 #define     NAME_START_X        340
 #define     URL_START_X         540
+#define     ID_START_X          830
 
-#define     NUM_START_Y         99
-#define     COUNTRY_START_Y     99
-#define     STYLE_START_Y       99
-#define     NAME_START_Y        99
-#define     URL_START_Y         99
+#define     ENG_START_X         220
+#define     FRE_START_X         340
+#define     GER_START_X         460
+#define     ITA_START_X         580
+#define     SPA_START_X         700
+
+#define     NUM_START_Y         120
+#define     COUNTRY_START_Y     120
+#define     STYLE_START_Y       120
+#define     NAME_START_Y        120
+#define     URL_START_Y         120
+#define     ID_START_Y          120
 
 #define     NUM_W               41
 #define     COUNTRY_W           81

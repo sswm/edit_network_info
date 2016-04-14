@@ -125,7 +125,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>80</y>
+      <y>120</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -142,8 +142,8 @@
    <widget class="QLabel" name="label_Name">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>80</y>
+      <x>830</x>
+      <y>120</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -157,29 +157,29 @@
      <string>Id</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_Style">
+   <widget class="QLabel" name="label_Style_English">
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>80</y>
-      <width>51</width>
+      <y>120</y>
+      <width>100</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>City</string>
+     <string>City_English</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_Num">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>120</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -191,6 +191,104 @@
     </property>
     <property name="text">
      <string>num</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Style_French">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>120</y>
+      <width>100</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>City_Frehch</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Style_German">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>120</y>
+      <width>100</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>City_German</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Style_Italian">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>120</y>
+      <width>100</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>City_Italian</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Style_Spanish">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>120</y>
+      <width>100</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>City_Spanish</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sort_city">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>90</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>sort A~Z</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sort_country">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>90</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>sort Country</string>
     </property>
    </widget>
   </widget>
