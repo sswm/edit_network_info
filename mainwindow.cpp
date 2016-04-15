@@ -111,8 +111,9 @@ void MainWindow::ReadFile(const char *path)
 
 
     if (sys_file.exists()) {
-        if (sys_file.open(QIODevice::ReadOnly)) {
+        if (sys_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream stream(&sys_file);
+            stream.setCodec("UTF-8");
             do {
                 line = stream.readLine().trimmed();
                 //qDebug() << line;
@@ -220,8 +221,9 @@ void MainWindow::SaveFile(const char *path)
 
     int i;
 
-    if (sys_file.open(QIODevice::WriteOnly)) {
+    if (sys_file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream stream(&sys_file);
+        stream.setCodec("UTF-8");
         stream << global_version << "\n";
         stream << "#format follow \"xx.xx.xx\"\n\n";
         for (i = 1; i < MAX_RADIO_ID; i++) {
@@ -289,36 +291,36 @@ void MainWindow::SaveFile(const char *path)
             }
             if (weather->lineEdit_City_English[i] != NULL) {
                 content = weather->lineEdit_City_English[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR, content.toLatin1().data());    
+                sprintf(buf, "%s=%s\n", W_CITY_STR, content.toUtf8().data());
             } else {
                 sprintf(buf, "%s=\n", W_CITY_STR);
             }
             stream << QString(buf);
 
             if (weather->lineEdit_City_Frechch[i] != NULL) {
-                content = weather->lineEdit_City_Frechch[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR_FRENCH, content.toLatin1().data());
+                content = weather->lineEdit_City_Frechch[i]->text();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_FRENCH, content.toUtf8().data());
             } else {
                 sprintf(buf, "%s=\n", W_CITY_STR_FRENCH);
             }
             stream << QString(buf);
             if (weather->lineEdit_City_German[i] != NULL) {
-                content = weather->lineEdit_City_German[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR_GERMAN, content.toLatin1().data());
+                content = weather->lineEdit_City_German[i]->text();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_GERMAN, content.toUtf8().data());
             } else {
                 sprintf(buf, "%s=\n", W_CITY_STR_GERMAN);
             }
             stream << QString(buf);
             if (weather->lineEdit_City_Italian[i] != NULL) {
-                content = weather->lineEdit_City_Italian[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR_ITALIAN, content.toLatin1().data());
+                content = weather->lineEdit_City_Italian[i]->text();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_ITALIAN, content.toUtf8().data());
             } else {
                 sprintf(buf, "%s=\n", W_CITY_STR_ITALIAN);
             }
             stream << QString(buf);
             if (weather->lineEdit_City_Spanish[i] != NULL) {
-                content = weather->lineEdit_City_Spanish[i]->text().trimmed();
-                sprintf(buf, "%s=%s\n", W_CITY_STR_SPANISH, content.toLatin1().data());
+                content = weather->lineEdit_City_Spanish[i]->text();
+                sprintf(buf, "%s=%s\n", W_CITY_STR_SPANISH, content.toUtf8().data());
             } else {
                 sprintf(buf, "%s=\n", W_CITY_STR_SPANISH);
             }

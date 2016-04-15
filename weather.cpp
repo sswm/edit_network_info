@@ -119,8 +119,9 @@ void Weather::ReadFile(const char *path)
 
 
     if (sys_file.exists()) {
-        if (sys_file.open(QIODevice::ReadOnly)) {
+        if (sys_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream stream(&sys_file);
+            stream.setCodec("UTF-8");
             do {
                 line = stream.readLine().trimmed();
                 //qDebug() << line;
@@ -149,7 +150,7 @@ void Weather::ReadFile(const char *path)
                             //ui->centralwidget->setGeometry(0, 0, central_width, central_height);
 
                             //tabwidget->resize(central_width,central_height);
-                            int wi = NUM_START_Y + weather_id * INTERVAL_H;
+                            //int wi = NUM_START_Y + weather_id * INTERVAL_H;
                             //qDebug() << "weather resize here~~" << central_height << "--now:" << wi;
                             //ui->centralwidget->resize(central_width,central_height);
                             //QScrollArea *scrollArea_t = new QScrollArea;
@@ -220,7 +221,7 @@ void Weather::ReadFile(const char *path)
             lineEdit_Cid[i]->setText("");
         }
     }
-    Sort_Country_A_Z();
+    //Sort_Country_A_Z();
 }
 
 
@@ -543,7 +544,10 @@ void Weather::RemoveBlank()
             p = lineEdit_Country[j]->text();
             q = lineEdit_Country[j+1]->text();
             //qDebug() << p << q;
-
+            if (p.compare("") != 0) {
+                //qDebug() << "break here";
+                continue;
+            }
             if (QString::compare(p, q, Qt::CaseInsensitive) < 0) {
                 QString tmp;
 

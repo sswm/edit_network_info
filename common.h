@@ -25,10 +25,10 @@
 #define     WEATHER_NUM_STR             "weather_num"
 #define     W_COUNTRY_STR               "cnty"
 #define     W_CITY_STR                  "city"
-#define     W_CITY_STR_FRENCH           "city_f"
-#define     W_CITY_STR_GERMAN           "city_g"
-#define     W_CITY_STR_ITALIAN          "city_i"
-#define     W_CITY_STR_SPANISH          "city_s"
+#define     W_CITY_STR_FRENCH           "ct_f"
+#define     W_CITY_STR_GERMAN           "ct_g"
+#define     W_CITY_STR_ITALIAN          "ct_i"
+#define     W_CITY_STR_SPANISH          "ct_s"
 
 
 #define     W_CITY_CID          "id"
